@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://deyjdqb7nevkx"]
 
-[ext_resource type="Script" path="res://scripts/pibble.gd" id="1_1u5iw"]
+[ext_resource type="Script" uid="uid://baf8mmsechp0i" path="res://scripts/pibble.gd" id="1_1u5iw"]
 [ext_resource type="Texture2D" uid="uid://jawcy0ic2107" path="res://assets/Basic Charakter Spritesheet.png" id="2_dxfo3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2qa7"]
