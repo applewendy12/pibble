@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="pibble"
-run/main_scene="uid://deyjdqb7nevkx"
-config/features=PackedStringArray("4.4", "Forward Plus")
+run/main_scene="res://scenes/root.tscn"
+config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [rendering]
