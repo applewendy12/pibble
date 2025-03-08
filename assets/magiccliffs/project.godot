@@ -10,10 +10,22 @@ config_version=5
 
 [application]
 
-config/name="pibble"
-run/main_scene="uid://deyjdqb7nevkx"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/name="Magic Cliffs Godot"
+run/main_scene="res://World/world.tscn"
+config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=426
+window/size/viewport_height=240
+window/size/window_width_override=3408
+window/size/window_height_override=1920
+window/stretch/mode="canvas_items"
+
+[layer_names]
+
+2d_physics/layer_1="World"
 
 [rendering]
 
