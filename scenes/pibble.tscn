@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://deyjdqb7nevkx"]
+[gd_scene load_steps=9 format=3 uid="uid://deyjdqb7nevkx"]
 
 [ext_resource type="Script" path="res://scripts/pibble.gd" id="1_1u5iw"]
 [ext_resource type="Texture2D" uid="uid://jawcy0ic2107" path="res://assets/Basic Charakter Spritesheet.png" id="2_dxfo3"]
@@ -39,9 +39,16 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f6bys"]
+radius = 5.0
+height = 16.0
+
 [node name="pibble" type="CharacterBody2D"]
 script = ExtResource("1_1u5iw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dmm08")
 animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_f6bys")
