@@ -1,0 +1,100 @@
+[gd_scene load_steps=8 format=3 uid="uid://6ap8p4r87qin"]
+
+[ext_resource type="Script" path="res://main_menu/main_menu.gd" id="1_glbon"]
+[ext_resource type="Texture2D" uid="uid://cvk884b4qoids" path="res://assets/swinging_pixel.png" id="2_nlkkf"]
+[ext_resource type="Texture2D" uid="uid://6kcbsw8eg7n4" path="res://assets/start_icon.png" id="3_qe12f"]
+[ext_resource type="Texture2D" uid="uid://cekq8yw74186q" path="res://assets/exit.png" id="4_8qtwp"]
+[ext_resource type="FontFile" path="res://assets/04B_30__.TTF" id="5_dy7ct"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3shxk"]
+texture = ExtResource("2_nlkkf")
+modulate_color = Color(0.533333, 0.533333, 0.533333, 0.752941)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oa53l"]
+bg_color = Color(0.670588, 0.592157, 0.403922, 0)
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_glbon")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -1.0
+offset_right = 2.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_3shxk")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -132.0
+offset_right = 260.0
+offset_bottom = 132.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 23
+theme_override_icons/icon = ExtResource("3_qe12f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oa53l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oa53l")
+theme_override_styles/normal = SubResource("StyleBoxFlat_oa53l")
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = 423.0
+offset_right = 100.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_oa53l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oa53l")
+theme_override_styles/normal = SubResource("StyleBoxFlat_oa53l")
+icon = ExtResource("4_8qtwp")
+alignment = 2
+
+[node name="Button3" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -17.0
+offset_top = 16.0
+offset_right = -9.0
+offset_bottom = 24.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -453.0
+offset_top = 68.0
+offset_right = 474.0
+offset_bottom = 243.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("5_dy7ct")
+theme_override_font_sizes/font_size = 80
+text = "pibble fighter 
+"
+horizontal_alignment = 2
+
+[connection signal="pressed" from="Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_ecit_pressed"]
