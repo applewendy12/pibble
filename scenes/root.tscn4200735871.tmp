@@ -687,6 +687,5 @@ shape = SubResource("WorldBoundaryShape2D_5sfjl")
 position = Vector2(41, -5)
 
 [node name="Camera2D" parent="." instance=ExtResource("10_7pvxh")]
-position = Vector2(2, 0)
 
 [connection signal="body_entered" from="Killbox" to="Killbox" method="_on_body_entered"]

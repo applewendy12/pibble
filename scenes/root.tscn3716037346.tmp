@@ -1,7 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://cn5itvwoh82bx"]
+[gd_scene load_steps=14 format=3 uid="uid://cn5itvwoh82bx"]
 
 [ext_resource type="PackedScene" uid="uid://deyjdqb7nevkx" path="res://scenes/pibble.tscn" id="1_j5px3"]
-[ext_resource type="Script" uid="uid://b0wpa07pinrpd" path="res://scenes/root.gd" id="1_y3xxt"]
+[ext_resource type="Script" uid="uid://oakyndcrm4s" path="res://scripts/camera_2d.gd" id="2_7pvxh"]
 [ext_resource type="PackedScene" uid="uid://eglt2mb4al1f" path="res://scenes/realpibble.tscn" id="2_jh1ax"]
 [ext_resource type="Texture2D" uid="uid://bhbgf8227qmsr" path="res://assets/tileset.png" id="2_twpsu"]
 [ext_resource type="Texture2D" uid="uid://b5wia1jhnulnx" path="res://assets/sky.png" id="3_lrqlo"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://uv5jvv6531tf" path="res://assets/far-grounds.png" id="6_kycxp"]
 [ext_resource type="PackedScene" path="res://scenes/killbox.tscn" id="7_5sfjl"]
 [ext_resource type="Script" path="res://scripts/killbox.gd" id="8_3hfy5"]
-[ext_resource type="PackedScene" uid="uid://qapknmmec3b0" path="res://scenes/camera_2d.tscn" id="10_7pvxh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lrqlo"]
 texture = ExtResource("2_twpsu")
@@ -589,10 +588,15 @@ distance = -263.0
 
 [node name="game" type="Node2D"]
 position = Vector2(-49, -19)
-script = ExtResource("1_y3xxt")
 
 [node name="evilarry" parent="." instance=ExtResource("1_j5px3")]
 position = Vector2(-16, 6)
+
+[node name="Camera2D" type="Camera2D" parent="evilarry"]
+position = Vector2(2, 19)
+position_smoothing_enabled = true
+editor_draw_limits = true
+script = ExtResource("2_7pvxh")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_sqa0i")
@@ -685,8 +689,5 @@ shape = SubResource("WorldBoundaryShape2D_5sfjl")
 
 [node name="realpibble" parent="." instance=ExtResource("2_jh1ax")]
 position = Vector2(41, -5)
-
-[node name="Camera2D" parent="." instance=ExtResource("10_7pvxh")]
-position = Vector2(2, 0)
 
 [connection signal="body_entered" from="Killbox" to="Killbox" method="_on_body_entered"]
