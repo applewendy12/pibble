@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://bhbgf8227qmsr" path="res://assets/tileset.png" id="2_twpsu"]
 [ext_resource type="Texture2D" uid="uid://b5wia1jhnulnx" path="res://assets/sky.png" id="3_lrqlo"]
 [ext_resource type="Texture2D" uid="uid://cdgh3fjixy6bv" path="res://assets/clouds.png" id="4_sqa0i"]
+[ext_resource type="Texture2D" uid="uid://b2cw3df4ou8tp" path="res://assets/sea.png" id="5_jh1ax"]
+[ext_resource type="Texture2D" uid="uid://uv5jvv6531tf" path="res://assets/far-grounds.png" id="6_kycxp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lrqlo"]
 texture = ExtResource("2_twpsu")
@@ -586,7 +588,6 @@ position = Vector2(-16, 6)
 
 [node name="Camera2D" type="Camera2D" parent="evilarry"]
 position = Vector2(2, 19)
-zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 editor_draw_limits = true
 
@@ -602,16 +603,76 @@ layer_1/tile_data = PackedInt32Array(-196582, 2359298, 11, -131046, 2359298, 12,
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(310, 37)
-scale = Vector2(29.1071, 4.09539)
+[node name="sky" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+z_index = -4
+position = Vector2(465.251, -52)
+scale = Vector2(16.5134, 2.66694)
 texture = ExtResource("3_lrqlo")
 
-[node name="sprite2D_clouds" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-visible = false
-position = Vector2(-312, -373)
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="clouds" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+z_index = -2
+position = Vector2(-136.161, -43.5753)
+scale = Vector2(1.19912, 1.06292)
 texture = ExtResource("4_sqa0i")
+
+[node name="clouds2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+z_index = -2
+position = Vector2(491, -45)
+scale = Vector2(1.12008, 1.07987)
+texture = ExtResource("4_sqa0i")
+
+[node name="clouds3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+z_index = -2
+position = Vector2(1074, -45)
+scale = Vector2(1.12008, 1.07987)
+texture = ExtResource("4_sqa0i")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="hills" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+visible = false
+position = Vector2(177, 45)
+scale = Vector2(1.09801, 2.2062)
+texture = ExtResource("6_kycxp")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="water" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+z_index = -3
+position = Vector2(-259, 305.493)
+scale = Vector2(3.63727, 5.78139)
+texture = ExtResource("5_jh1ax")
+
+[node name="water2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+z_index = -3
+position = Vector2(944, 313.493)
+scale = Vector2(3.63727, 5.84389)
+texture = ExtResource("5_jh1ax")
+
+[node name="water3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+z_index = -3
+position = Vector2(544, 309.993)
+scale = Vector2(3.63727, 5.7293)
+texture = ExtResource("5_jh1ax")
+
+[node name="water4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+z_index = -3
+position = Vector2(142, 302)
+scale = Vector2(3.63727, 5.7293)
+texture = ExtResource("5_jh1ax")
+
+[node name="water5" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+z_index = -3
+position = Vector2(1340, 321)
+scale = Vector2(3.63727, 5.7293)
+texture = ExtResource("5_jh1ax")
 
 [node name="realpibble" parent="." instance=ExtResource("2_jh1ax")]
 position = Vector2(41, -5)
