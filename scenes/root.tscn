@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cn5itvwoh82bx"]
+[gd_scene load_steps=8 format=3 uid="uid://cn5itvwoh82bx"]
 
 [ext_resource type="PackedScene" uid="uid://deyjdqb7nevkx" path="res://scenes/pibble.tscn" id="1_j5px3"]
+[ext_resource type="PackedScene" uid="uid://eglt2mb4al1f" path="res://scenes/realpibble.tscn" id="2_jh1ax"]
 [ext_resource type="Texture2D" uid="uid://bhbgf8227qmsr" path="res://assets/tileset.png" id="2_twpsu"]
 [ext_resource type="Texture2D" uid="uid://b5wia1jhnulnx" path="res://assets/sky.png" id="3_lrqlo"]
 [ext_resource type="Texture2D" uid="uid://cdgh3fjixy6bv" path="res://assets/clouds.png" id="4_sqa0i"]
@@ -580,10 +581,10 @@ sources/2 = SubResource("TileSetAtlasSource_lrqlo")
 [node name="game" type="Node2D"]
 position = Vector2(-49, -19)
 
-[node name="pibble" parent="." instance=ExtResource("1_j5px3")]
-position = Vector2(-2, 8)
+[node name="evilarry" parent="." instance=ExtResource("1_j5px3")]
+position = Vector2(-16, 6)
 
-[node name="Camera2D" type="Camera2D" parent="pibble"]
+[node name="Camera2D" type="Camera2D" parent="evilarry"]
 position = Vector2(2, 19)
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
@@ -611,3 +612,6 @@ texture = ExtResource("3_lrqlo")
 visible = false
 position = Vector2(-312, -373)
 texture = ExtResource("4_sqa0i")
+
+[node name="realpibble" parent="." instance=ExtResource("2_jh1ax")]
+position = Vector2(41, -5)
