@@ -1,0 +1,100 @@
+[gd_scene load_steps=8 format=3 uid="uid://ctfysghx1tll4"]
+
+[ext_resource type="Script" uid="uid://cdeqrpamyojhs" path="res://main_menu/main_menu.gd" id="1_bws42"]
+[ext_resource type="Texture2D" uid="uid://b20q8qj3frt7n" path="res://assets/swinging_pixel.png" id="1_d3a7t"]
+[ext_resource type="Texture2D" uid="uid://c40qg64dsg02n" path="res://assets/start_icon.png" id="1_oa53l"]
+[ext_resource type="FontFile" uid="uid://dqfi6glawuj1x" path="res://assets/04B_30__.TTF" id="3_3shxk"]
+[ext_resource type="Texture2D" uid="uid://isdjfdebt7sm" path="res://assets/exit.png" id="4_3f7m4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3shxk"]
+texture = ExtResource("1_d3a7t")
+modulate_color = Color(0.533333, 0.533333, 0.533333, 0.752941)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oa53l"]
+bg_color = Color(0.670588, 0.592157, 0.403922, 0)
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bws42")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -1.0
+offset_right = 2.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_3shxk")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -132.0
+offset_right = 260.0
+offset_bottom = 132.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 23
+theme_override_icons/icon = ExtResource("1_oa53l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oa53l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oa53l")
+theme_override_styles/normal = SubResource("StyleBoxFlat_oa53l")
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = 423.0
+offset_right = 100.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_oa53l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oa53l")
+theme_override_styles/normal = SubResource("StyleBoxFlat_oa53l")
+icon = ExtResource("4_3f7m4")
+alignment = 2
+
+[node name="Button3" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -17.0
+offset_top = 16.0
+offset_right = -9.0
+offset_bottom = 24.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -230.0
+offset_top = 60.0
+offset_right = 230.0
+offset_bottom = 235.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_3shxk")
+theme_override_font_sizes/font_size = 50
+text = "Pibble VS Evil Larry"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_ecit_pressed"]
