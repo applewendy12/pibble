@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cn5itvwoh82bx"]
+[gd_scene load_steps=10 format=3 uid="uid://cn5itvwoh82bx"]
 
 [ext_resource type="PackedScene" uid="uid://deyjdqb7nevkx" path="res://scenes/pibble.tscn" id="1_j5px3"]
 [ext_resource type="Texture2D" uid="uid://bhbgf8227qmsr" path="res://assets/tileset.png" id="2_twpsu"]
 [ext_resource type="Texture2D" uid="uid://b5wia1jhnulnx" path="res://assets/sky.png" id="3_lrqlo"]
 [ext_resource type="Texture2D" uid="uid://cdgh3fjixy6bv" path="res://assets/clouds.png" id="4_sqa0i"]
+[ext_resource type="PackedScene" uid="uid://brjoouklqygnb" path="res://scenes/killzone.tscn" id="5_jh1ax"]
+[ext_resource type="Script" uid="uid://ct6w0kw4qiibk" path="res://scripts/killzone.gd" id="6_kycxp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lrqlo"]
 texture = ExtResource("2_twpsu")
@@ -577,6 +579,9 @@ physics_layer_0/collision_layer = 3
 navigation_layer_0/layers = 1
 sources/2 = SubResource("TileSetAtlasSource_lrqlo")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jh1ax"]
+distance = -194.0
+
 [node name="game" type="Node2D"]
 position = Vector2(-49, -19)
 
@@ -603,7 +608,7 @@ layer_1/tile_data = PackedInt32Array(-196582, 2359298, 11, -131046, 2359298, 12,
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(310, 37)
+position = Vector2(311, 37)
 scale = Vector2(29.1071, 4.09539)
 texture = ExtResource("3_lrqlo")
 
@@ -611,3 +616,13 @@ texture = ExtResource("3_lrqlo")
 visible = false
 position = Vector2(-312, -373)
 texture = ExtResource("4_sqa0i")
+
+[node name="Killzone" parent="." instance=ExtResource("5_jh1ax")]
+position = Vector2(0, 4)
+script = ExtResource("6_kycxp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(-12, 80)
+shape = SubResource("WorldBoundaryShape2D_jh1ax")
+
+[connection signal="body_entered" from="Killzone" to="Killzone" method="_on_body_entered"]
