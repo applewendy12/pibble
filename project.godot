@@ -11,14 +11,13 @@ config_version=5
 [application]
 
 config/name="pibble"
-run/main_scene="res://scenes/root.tscn"
+run/main_scene="uid://cey5htqkouf5c"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/mode=3
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
 
 [input]
 
