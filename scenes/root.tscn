@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 [gd_scene load_steps=16 format=3 uid="uid://cn5itvwoh82bx"]
 [gd_scene load_steps=16 format=3 uid="uid://cey5htqkouf5c"]
+=======
+[gd_scene load_steps=15 format=3 uid="uid://cn5itvwoh82bx"]
+>>>>>>> parent of a9913f6 (added stage2 (camera not working), moved evil larry)
 
 [ext_resource type="PackedScene" uid="uid://deyjdqb7nevkx" path="res://scenes/pibble.tscn" id="1_j5px3"]
 [ext_resource type="Script" uid="uid://b0wpa07pinrpd" path="res://scenes/root.gd" id="1_y3xxt"]
@@ -9,12 +13,17 @@
 [ext_resource type="Texture2D" uid="uid://cdgh3fjixy6bv" path="res://assets/clouds.png" id="4_sqa0i"]
 [ext_resource type="Texture2D" uid="uid://b2cw3df4ou8tp" path="res://assets/sea.png" id="5_jh1ax"]
 [ext_resource type="Texture2D" uid="uid://uv5jvv6531tf" path="res://assets/far-grounds.png" id="6_kycxp"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://bxu1yhm25q3vp" path="res://scenes/killbox.tscn" id="7_5sfjl"]
 [ext_resource type="Script" path="res://scripts/killbox.gd" id="8_3hfy5"]
 [ext_resource type="PackedScene" uid="uid://bxu1yhm25q3vp" path="res://scenes/killbox.tscn" id="7_5sfjl"]
 [ext_resource type="Script" uid="uid://r3fron3nefpo" path="res://scripts/killbox.gd" id="8_3hfy5"]
+=======
+[ext_resource type="PackedScene" path="res://scenes/killbox.tscn" id="7_5sfjl"]
+[ext_resource type="Script" path="res://scripts/killbox.gd" id="8_3hfy5"]
+>>>>>>> parent of a9913f6 (added stage2 (camera not working), moved evil larry)
 [ext_resource type="PackedScene" uid="uid://qapknmmec3b0" path="res://scenes/camera_2d.tscn" id="10_7pvxh"]
-[ext_resource type="PackedScene" path="res://scenes/iron_man.tscn" id="12_xsp7o"]
+[ext_resource type="PackedScene" uid="uid://vlajbs7tbeuh" path="res://scenes/iron_man.tscn" id="12_xsp7o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lrqlo"]
 texture = ExtResource("2_twpsu")
@@ -596,8 +605,12 @@ position = Vector2(-49, -19)
 script = ExtResource("1_y3xxt")
 
 [node name="evilarry" parent="." instance=ExtResource("1_j5px3")]
+<<<<<<< HEAD
 position = Vector2(449, -37)
 position = Vector2(619, -22)
+=======
+position = Vector2(-16, 6)
+>>>>>>> parent of a9913f6 (added stage2 (camera not working), moved evil larry)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_sqa0i")
@@ -689,7 +702,7 @@ script = ExtResource("8_3hfy5")
 shape = SubResource("WorldBoundaryShape2D_5sfjl")
 
 [node name="realpibble" parent="." instance=ExtResource("2_jh1ax")]
-position = Vector2(-66, -10)
+position = Vector2(-53, 8)
 
 [node name="Camera2D" parent="." instance=ExtResource("10_7pvxh")]
 position = Vector2(2, 0)

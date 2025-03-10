@@ -35,7 +35,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_3shxk")
 
-[node name="start_button" type="Button" parent="."]
+[node name="Button" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -54,7 +54,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_oa53l")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_oa53l")
 theme_override_styles/normal = SubResource("StyleBoxFlat_oa53l")
 
-[node name="exit_button" type="Button" parent="."]
+[node name="Button2" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -96,5 +96,5 @@ text = "pibble fighter
 "
 horizontal_alignment = 2
 
-[connection signal="pressed" from="start_button" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="exit_button" to="." method="_on_ecit_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_ecit_pressed"]
