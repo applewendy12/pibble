@@ -8,6 +8,7 @@ const JUMP_VELOCITY = -400.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var animation_player = $AnimationPlayer
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -40,6 +41,7 @@ func _physics_process(delta):
 			animated_sprite.play("run")
 	else:
 		animated_sprite.play("jump")
+		animation_player.play("jumpsound")
 	
 	#Apply movement
 	if direction:

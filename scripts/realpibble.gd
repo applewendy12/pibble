@@ -64,3 +64,4 @@ func _physics_process(delta):
 
 func _on_iron_man_body_entered(body):
 	animated_sprite.play("tranquility")
+	

@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://deyjdqb7nevkx"]
+[gd_scene load_steps=21 format=3 uid="uid://deyjdqb7nevkx"]
 
 [ext_resource type="Script" uid="uid://baf8mmsechp0i" path="res://scripts/pibble.gd" id="1_1u5iw"]
 [ext_resource type="Texture2D" uid="uid://8tlmo21okuwm" path="res://assets/evillarry.png" id="2_xbk2q"]
+[ext_resource type="AudioStream" uid="uid://b53vetwm4mvxd" path="res://assets/sounds/meow.wav" id="3_el4qx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b6rs1"]
 atlas = ExtResource("2_xbk2q")
@@ -115,6 +116,29 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_21gqj"]
 radius = 13.0384
 
+[sub_resource type="Animation" id="Animation_21gqj"]
+resource_name = "jumpsound"
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("jumpsound")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.67,
+"stream": ExtResource("3_el4qx")
+}],
+"times": PackedFloat32Array(0.00333321)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_el4qx"]
+_data = {
+&"jumpsound": SubResource("Animation_21gqj")
+}
+
 [node name="evil larry" type="CharacterBody2D"]
 script = ExtResource("1_1u5iw")
 
@@ -127,3 +151,10 @@ animation = &"run"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, -9)
 shape = SubResource("CircleShape2D_21gqj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_el4qx")
+}
+
+[node name="jumpsound" type="AudioStreamPlayer2D" parent="."]
