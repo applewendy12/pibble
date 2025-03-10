@@ -10,6 +10,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var hitbox = $Hitbox
 @onready var timer = $CooldownTimer
+@onready var animation_player = $AnimationPlayer
 
 var can_attack = true
 
@@ -21,6 +22,7 @@ func _physics_process(delta):
 	# Handle jump.
 	if Input.is_action_just_pressed("move_up_1") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -55,6 +57,10 @@ func _physics_process(delta):
 			animated_sprite.play("run")
 	else:
 		animated_sprite.play("jump")
+		animation_player.play("jump")
 
 
 	move_and_slide()
+
+func _on_iron_man_body_entered(body):
+	animated_sprite.play("tranquility")

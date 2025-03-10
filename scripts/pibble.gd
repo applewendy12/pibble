@@ -49,3 +49,6 @@ func _physics_process(delta):
 
 	move_and_slide()
 
+
+func _on_iron_man_body_entered(body:Node2D) -> void:
+	print("Entered")

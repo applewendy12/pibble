@@ -1,3 +1,3 @@
-[gd_scene load_steps=0 format=3 uid="uid://yumskmk25u4v"]
+[gd_scene format=3 uid="uid://yumskmk25u4v"]
 
 [node name="Killzone" type="Area2D"]

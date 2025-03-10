@@ -1,8 +1,12 @@
-[gd_scene load_steps=30 format=3 uid="uid://eglt2mb4al1f"]
+[gd_scene load_steps=43 format=3 uid="uid://eglt2mb4al1f"]
 
 [ext_resource type="Script" uid="uid://ckumw34buhtbp" path="res://scripts/realpibble.gd" id="1_bajjx"]
 [ext_resource type="Texture2D" uid="uid://d028qa53orn3d" path="res://assets/realpibble.png" id="2_k6qjg"]
 [ext_resource type="Texture2D" uid="uid://br2cfa8fy47" path="res://assets/pibbleattack.png" id="2_o4u02"]
+[ext_resource type="Texture2D" uid="uid://cbedsfpnbrfnl" path="res://assets/pibbleIdle.png" id="3_pf3ei"]
+[ext_resource type="Texture2D" uid="uid://depw7sy6chn21" path="res://assets/jumppibble.png" id="4_gb6xl"]
+[ext_resource type="Texture2D" uid="uid://bq155fypm03fb" path="res://assets/tranquility.png" id="5_g6ie0"]
+[ext_resource type="AudioStream" uid="uid://bjy0oncj8tb6n" path="res://assets/sounds/boing.wav" id="6_uo476"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gjb0c"]
 atlas = ExtResource("2_o4u02")
@@ -36,29 +40,53 @@ region = Rect2(384, 0, 64, 64)
 atlas = ExtResource("2_o4u02")
 region = Rect2(448, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_o4u02"]
-atlas = ExtResource("2_k6qjg")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fqg0q"]
-atlas = ExtResource("2_k6qjg")
+[sub_resource type="AtlasTexture" id="AtlasTexture_iaiej"]
+atlas = ExtResource("3_pf3ei")
 region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pbhjh"]
-atlas = ExtResource("2_k6qjg")
-region = Rect2(384, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_16fak"]
+atlas = ExtResource("3_pf3ei")
+region = Rect2(64, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uo476"]
-atlas = ExtResource("2_k6qjg")
-region = Rect2(448, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_btdi8"]
+atlas = ExtResource("3_pf3ei")
+region = Rect2(128, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_g6ie0"]
-atlas = ExtResource("2_k6qjg")
-region = Rect2(512, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_4pvia"]
+atlas = ExtResource("3_pf3ei")
+region = Rect2(192, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_w6dce"]
-atlas = ExtResource("2_k6qjg")
-region = Rect2(576, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjb16"]
+atlas = ExtResource("3_pf3ei")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kbco"]
+atlas = ExtResource("4_gb6xl")
+region = Rect2(3, 0, 65, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlfqp"]
+atlas = ExtResource("4_gb6xl")
+region = Rect2(68, 0, 65, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sgnhh"]
+atlas = ExtResource("4_gb6xl")
+region = Rect2(133, 0, 65, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77qkv"]
+atlas = ExtResource("4_gb6xl")
+region = Rect2(198, 0, 65, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxdn5"]
+atlas = ExtResource("4_gb6xl")
+region = Rect2(263, 0, 65, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8s8f"]
+atlas = ExtResource("4_gb6xl")
+region = Rect2(328, 0, 65, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_muftf"]
+atlas = ExtResource("4_gb6xl")
+region = Rect2(393, 0, 65, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aurhk"]
 atlas = ExtResource("2_k6qjg")
@@ -133,10 +161,19 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_o4u02")
+"texture": SubResource("AtlasTexture_iaiej")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fqg0q")
+"texture": SubResource("AtlasTexture_16fak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_btdi8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4pvia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjb16")
 }],
 "loop": true,
 "name": &"idle",
@@ -144,19 +181,36 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pbhjh")
+"texture": SubResource("AtlasTexture_1kbco")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uo476")
+"texture": SubResource("AtlasTexture_wlfqp")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_g6ie0")
+"texture": SubResource("AtlasTexture_sgnhh")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_w6dce")
+"texture": SubResource("AtlasTexture_77qkv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxdn5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8s8f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_muftf")
 }],
 "loop": true,
 "name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_g6ie0")
+}],
+"loop": true,
+"name": &"tranquility",
 "speed": 5.0
 }, {
 "frames": [{
@@ -196,21 +250,53 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k6qjg"]
-size = Vector2(42, 37)
+size = Vector2(42, 28.5)
+
+[sub_resource type="Animation" id="Animation_g6ie0"]
+resource_name = "jump"
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Jumpsound")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_uo476")
+}],
+"times": PackedFloat32Array(-0.8)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_w6dce"]
+resource_name = "tranquility"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w6dce"]
+_data = {
+&"jump": SubResource("Animation_g6ie0"),
+&"tranquility": SubResource("Animation_w6dce")
+}
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 scale = Vector2(0.6, 0.6)
 script = ExtResource("1_bajjx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1.66667, -1.66667)
+scale = Vector2(0.910008, 0.837244)
 sprite_frames = SubResource("SpriteFrames_bajjx")
-animation = &"attack"
+animation = &"tranquility"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3.5)
+position = Vector2(1.66667, 8.33333)
 shape = SubResource("RectangleShape2D_k6qjg")
 
-[node name="Hitbox" type="RayCast2D" parent="."]
-target_position = Vector2(60, 0)
+[node name="Jumpsound" type="AudioStreamPlayer2D" parent="."]
 
-[node name="CooldownTimer" type="Timer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimatedSprite2D")
+libraries = {
+&"": SubResource("AnimationLibrary_w6dce")
+}

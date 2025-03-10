@@ -1,0 +1,93 @@
+[gd_scene load_steps=13 format=3 uid="uid://vlajbs7tbeuh"]
+
+[ext_resource type="Texture2D" uid="uid://buj63na5cwso0" path="res://assets/iron_man.png" id="1_4ug8e"]
+[ext_resource type="Script" uid="uid://c5qk2kweocdav" path="res://scripts/iron_man.gd" id="1_m8emb"]
+[ext_resource type="AudioStream" uid="uid://bjy0oncj8tb6n" path="res://assets/sounds/boing.wav" id="3_fv045"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_41ck3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8emb"]
+atlas = ExtResource("1_4ug8e")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fv045"]
+atlas = ExtResource("1_4ug8e")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pcrfn"]
+atlas = ExtResource("1_4ug8e")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aq5dg"]
+atlas = ExtResource("1_4ug8e")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjcyx"]
+atlas = ExtResource("1_4ug8e")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_puvhu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8emb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fv045")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pcrfn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aq5dg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjcyx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_pcrfn"]
+resource_name = "pickup"
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.81,
+"stream": ExtResource("3_fv045")
+}],
+"times": PackedFloat32Array(0.0333334)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aq5dg"]
+_data = {
+&"pickup": SubResource("Animation_pcrfn")
+}
+
+[node name="IronMan" type="Area2D"]
+script = ExtResource("1_m8emb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_41ck3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_puvhu")
+autoplay = "default"
+
+[node name="Pickup" type="AudioStreamPlayer2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Pickup")
+libraries = {
+&"": SubResource("AnimationLibrary_aq5dg")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
